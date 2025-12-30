@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: Gray-800 (Your theme background) -->
+  <rect width="512" height="512" rx="128" fill="#1f2937"/>
+
+  <!-- Line 1: "function main()" metaphor -->
+  <!-- Blue-600 Accent (Keyword) -->
+  <rect x="96" y="128" width="112" height="64" rx="32" fill="#2563eb"/>
+  <!-- White (Rest of line) -->
+  <rect x="240" y="128" width="176" height="64" rx="32" fill="white"/>
+
+  <!-- Line 2: Indented logic -->
+  <rect x="176" y="240" width="240" height="64" rx="32" fill="white" fill-opacity="0.9"/>
+
+  <!-- Line 3: Closing brace metaphor -->
+  <rect x="96" y="352" width="96" height="64" rx="32" fill="white" fill-opacity="0.9"/>
+</svg>

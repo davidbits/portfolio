@@ -4,20 +4,52 @@ import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 import React from 'react';
 
+// Define the base URL for SEO assets
+const baseUrl = 'https://davidyoung.co.za';
+
 export const metadata: Metadata = {
-    title: 'David Young - Portfolio',
-    description: `Interactive command-line portfolio for ${ABOUT.name}, a ${ABOUT.role}.`,
+    metadataBase: new URL(baseUrl),
+    title: {
+        default: 'David Young | Software Engineer',
+        template: '%s | David Young',
+    },
+    description: `Personal website for ${ABOUT.name}, a ${ABOUT.role}.`,
     authors: [{ name: ABOUT.name }],
     keywords: [
-        'developer',
-        'portfolio',
-        'react',
-        'nextjs',
-        'typescript',
-        'software engineer',
-        'full stack',
-        ABOUT.name,
+        'David Young',
+        'Software Engineer',
+        'FERS',
+        'Radar Simulator',
+        'React',
+        'Next.js',
+        'Rust',
+        'Portfolio',
     ],
+    icons: {
+        icon: '/favicon.svg',
+    },
+    openGraph: {
+        title: 'David Young - Software Engineer & Researcher',
+        description: 'aspiring hawaiian shirt tech guy',
+        url: baseUrl,
+        siteName: 'David Young Portfolio',
+        locale: 'en_ZA',
+        type: 'website',
+        images: [
+            {
+                url: '/og-image.png',
+                width: 1200,
+                height: 630,
+                alt: 'David Young Website Preview',
+            },
+        ],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'David Young - Software Engineer',
+        description: 'aspiring hawaiian shirt tech guy',
+        images: ['/og-image.png'],
+    },
 };
 
 export default function RootLayout({
@@ -30,8 +62,9 @@ export default function RootLayout({
         '@type': 'Person',
         name: ABOUT.name,
         jobTitle: ABOUT.role,
-        url: 'https://davidyoung.co.za',
+        url: baseUrl,
         sameAs: [`https://${CONTACT.github}`, `https://${CONTACT.linkedin}`],
+        image: `${baseUrl}/og-image.png`,
     };
     return (
         <html lang="en">

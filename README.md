@@ -33,7 +33,7 @@ command-line interface (CLI) to showcase skills, projects, and professional back
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/the-user-created/portfolio.git
+    git clone https://github.com/davidbits/portfolio.git
     cd portfolio
     ```
 

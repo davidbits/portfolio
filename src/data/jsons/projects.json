@@ -29,7 +29,7 @@
         "title": "The Flexible Extensible Radar Simulator (Masters)",
         "description": "A comprehensive suite of tools for signal-level radar simulation including a C++23 core and React/Tauri UI.",
         "stack": ["C++23", "Rust", "Tauri", "React", "TypeScript", "CMake"],
-        "github": "https://github.com/the-user-created/FERS",
+        "github": "https://github.com/davidbits/FERS",
         "overview": "FERS is a signal-level radar simulator structured as a monorepo containing a high-performance C++23 simulation engine (libfers) and a modern desktop UI (fers-ui). It enables the construction and visualization of complex radar scenarios with a unified event-driven architecture.",
         "objectives": [
             "Modernize the legacy C++98 engine to C++23 with a unified event-driven architecture.",
@@ -81,7 +81,7 @@
         "title": "Modernising the FERS Software Package (Undergrad)",
         "description": "Dragging a legacy radar simulator (FERS) from C++98/03 into the C++20/23 era.",
         "stack": ["C++20/23", "GitHub Actions", "CMake", "Valgrind", "HDF5"],
-        "github": "https://github.com/the-user-created/FERS",
+        "github": "https://github.com/davidbits/FERS",
         "reportUrl": "/assets/pdf/modern_fers_software.pdf",
         "overview": "This project focused on updating the Flexible, Extensible Radar Simulator (FERS) to meet modern C++ standards. Originally developed in C++98/03, FERS is a vital tool for the Radar and Remote Sensing Group at UCT. The modernization enhanced performance, readability, and maintainability.",
         "objectives": [
@@ -111,7 +111,7 @@
         "title": "Encryption and Compression on Resource-Constrained Embedded ARM MCs",
         "description": "Implementing LZSS compression and Blowfish encryption on an STM32 chip for Antarctic buoys.",
         "stack": ["C", "Python", "STM32 HAL", "Assembly"],
-        "github": "https://github.com/the-user-created/EEE3097S-Project",
+        "github": "https://github.com/davidbits/EEE3097S-Project",
         "reportUrl": "/assets/pdf/arm_sharc_comms.pdf",
         "overview": "Designed for secure data transmission from Antarctic sensor buoys over the Iridium satellite network. The goal was to minimize transmission costs via compression while ensuring data security.",
         "objectives": [
@@ -146,7 +146,7 @@
         "title": "Comparative Analysis and Optimization of MD5 & MD6 Hashing Algorithms",
         "description": "A digital cage match pitting MD5 against MD6 using C++, OpenCL, and Verilog.",
         "stack": ["C++", "OpenCL", "Verilog", "Vivado"],
-        "github": "https://github.com/the-user-created/EEE4120F-YODA",
+        "github": "https://github.com/davidbits/EEE4120F-YODA",
         "reportUrl": "/assets/pdf/yoda.pdf",
         "overview": "Evaluated the performance trade-offs between software (C++), parallel computing (OpenCL), and hardware acceleration (Verilog) for cryptographic hashing.",
         "objectives": [

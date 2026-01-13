@@ -59,23 +59,6 @@
         "results": "Released a fully featured app with secure local storage, diverse chart visualizations, and a seamless user experience across Android and iOS platforms."
     },
     {
-        "id": "notaro",
-        "name": "Notaro",
-        "title": "Notaro: Self-Hostable Note Ecosystem",
-        "description": "A lightweight, open-source note-taking suite with a shared Rust core across Desktop, Mobile, and Web.",
-        "stack": ["Rust", "Tauri", "SvelteKit", "Flutter", "Docker"],
-        "github": "https://github.com/astraen-dev/notaro",
-        "overview": "Notaro is an experimental monorepo project showcasing a unified business logic layer written in Rust. The core crate (`notaro_core`) handles database syncing and conflict resolution, shared across a Tauri desktop app, a Flutter mobile app (via FFI), and a SvelteKit web app (via WASM).",
-        "objectives": [
-            "Architect a platform-agnostic Rust core library.",
-            "Implement FFI bindings for Flutter and WASM compilation for the Web.",
-            "Develop a self-hostable sync server using Rust and WebSockets.",
-            "Create a cohesive user experience across three distinct frontend frameworks."
-        ],
-        "challenges": "Managing the complexity of cross-compilation for FFI and WASM targets within a single monorepo. Implementing conflict-free data synchronization logic (CRDTs/Diffs) in the core library.",
-        "results": "TBD"
-    },
-    {
         "id": "fers-fyp",
         "name": "FERS (FYP)",
         "title": "Modernising the FERS Software Package (Undergrad)",

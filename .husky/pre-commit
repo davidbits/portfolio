@@ -1,1 +1,1 @@
-pnpm lint-staged
+bunx @biomejs/biome check --write

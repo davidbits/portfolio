@@ -1,172 +1,172 @@
 [
-    {
-        "id": "sortpedia",
-        "name": "SortPedia",
-        "title": "SortPedia: The Interactive Sorting Algorithm Encyclopedia",
-        "description": "An interactive encyclopedia for 30+ sorting algorithms, featuring a real-time visualizer, side-by-side racing, and a browser-based performance benchmark engine.",
-        "stack": [
-            "SvelteKit",
-            "Svelte 5 Runes",
-            "TypeScript",
-            "TailwindCSS",
-            "Web Workers",
-            "KaTeX"
-        ],
-        "github": "https://github.com/astraen-dev/sortpedia",
-        "link": "https://sortpedia.com",
-        "overview": "SortPedia is a modern, interactive encyclopedia that bridges the gap between abstract computer science theory and intuitive visual understanding. It allows users to watch, race, and benchmark over 30 sorting algorithms—from industry standards like Quick Sort to esoteric ones like Thanos Sort—directly in the browser, providing a comprehensive educational tool for students and developers.",
-        "objectives": [
-            "Develop an interactive visualizer to render algorithm execution step-by-step, with full playback controls (play, pause, step forward/backward, speed adjust).",
-            "Implement a side-by-side 'Algorithm Racing' feature to visually compare the performance, stability, and access patterns of any two algorithms on identical datasets.",
-            "Build a performance benchmarking tool using Web Workers to run thousands of iterations off the main thread, measuring raw execution time without freezing the UI.",
-            "Create a comprehensive library for each algorithm, complete with LaTeX-rendered complexity analysis, detailed explanations, and clean, copy-pasteable JavaScript implementations."
-        ],
-        "challenges": "The primary technical challenge was capturing the precise state of an algorithm at every critical operation (e.g., a comparison or a swap) to enable step-by-step visualization. This was solved by implementing each sorting algorithm as a JavaScript Generator Function (function*). This approach allowed the sorting logic to yield control back to the visualizer engine at each step, passing a detailed event payload that described the operation performed. This enabled robust and accurate playback, pausing, and stepping capabilities without complex state management or code instrumentation."
-    },
-    {
-        "id": "fers-monorepo",
-        "name": "FERS (Masters)",
-        "title": "The Flexible Extensible Radar Simulator (Masters)",
-        "description": "A comprehensive suite of tools for signal-level radar simulation including a C++23 core and React/Tauri UI.",
-        "stack": ["C++23", "Rust", "Tauri", "React", "TypeScript", "CMake"],
-        "github": "https://github.com/davidbits/FERS",
-        "overview": "FERS is a signal-level radar simulator structured as a monorepo containing a high-performance C++23 simulation engine (libfers) and a modern desktop UI (fers-ui). It enables the construction and visualization of complex radar scenarios with a unified event-driven architecture.",
-        "objectives": [
-            "Modernize the legacy C++98 engine to C++23 with a unified event-driven architecture.",
-            "Develop a cross-platform desktop UI using Tauri and React for scenario visualization.",
-            "Implement a stable C-API and XML schema contract for interoperability.",
-            "Ensure high-performance simulation of mono/multistatic and pulsed/CW systems."
-        ],
-        "challenges": "Balancing performance optimizations with code maintainability during the modernization process. Designing an intuitive UI that effectively visualizes complex radar scenarios and data.",
-        "results": "Successfully designed and implemented a modern radar simulation suite with significant performance improvements and an enhanced user experience. The project demonstrated the viability of using modern C++ and web technologies for complex simulation tasks."
-    },
-    {
-        "id": "rainvu",
-        "name": "RainVu",
-        "title": "RainVu: Rainfall Logger & Analytics",
-        "description": "A modern Flutter app for tracking rainfall data with powerful local-first analytics.",
-        "stack": ["Flutter", "Dart", "Riverpod", "SQLite", "Firebase"],
-        "github": "https://github.com/astraen-dev/RainVu",
-        "appStoreUrl": "https://apps.apple.com/us/app/rainvu/id6754812264",
-        "playStoreUrl": "https://play.google.com/store/apps/details?id=com.astraen.rainvu",
-        "overview": "RainVu is a privacy-focused mobile application for farmers and weather enthusiasts to log and analyze rainfall data. It features a local-first architecture using Drift (SQLite) for offline capability and custom charting for historical analysis.",
-        "objectives": [
-            "Build a robust local-first architecture using Drift and Riverpod.",
-            "Implement complex analytics for MTD/YTD totals and seasonal trends.",
-            "Ensure data portability with JSON/CSV export and import features."
-        ],
-        "challenges": "Designing a responsive charting interface that handles large historical datasets smoothly on mobile devices. Managing complex state synchronization between local databases and UI states.",
-        "results": "Released a fully featured app with secure local storage, diverse chart visualizations, and a seamless user experience across Android and iOS platforms."
-    },
-    {
-        "id": "fers-fyp",
-        "name": "FERS (FYP)",
-        "title": "Modernising the FERS Software Package (Undergrad)",
-        "description": "Dragging a legacy radar simulator (FERS) from C++98/03 into the C++20/23 era.",
-        "stack": ["C++20/23", "GitHub Actions", "CMake", "Valgrind", "HDF5"],
-        "github": "https://github.com/davidbits/FERS",
-        "reportUrl": "/assets/pdf/modern_fers_software.pdf",
-        "overview": "This project focused on updating the Flexible, Extensible Radar Simulator (FERS) to meet modern C++ standards. Originally developed in C++98/03, FERS is a vital tool for the Radar and Remote Sensing Group at UCT. The modernization enhanced performance, readability, and maintainability.",
-        "objectives": [
-            "Upgrade codebase to C++20/23 features (concepts, ranges, modules).",
-            "Implement performance optimizations (multithreading, smart pointers).",
-            "Ensure backward compatibility for simulation integrity.",
-            "Conduct thorough regression testing and profiling."
-        ],
-        "challenges": "Ensuring backward compatibility while refactoring core memory management logic. Managing complexities of new C++ features and mitigating regression risks during extensive overhauls.",
-        "results": "Achieved speedups ranging from 1.46x to 3.55x. Eliminated memory leaks via smart pointers. Achieved 90.5% line coverage and 95.8% function coverage in regression testing.",
-        "images": [
-            {
-                "src": "/assets/img/average_cpu_usage.png",
-                "alt": "CPU Usage",
-                "caption": "Figure 1: CPU Usage Comparison"
-            },
-            {
-                "src": "/assets/img/average_speedups.png",
-                "alt": "Speedups",
-                "caption": "Figure 2: Speedup Benchmarks"
-            }
-        ]
-    },
-    {
-        "id": "arm",
-        "name": "STM32 Data Encryption",
-        "title": "Encryption and Compression on Resource-Constrained Embedded ARM MCs",
-        "description": "Implementing LZSS compression and Blowfish encryption on an STM32 chip for Antarctic buoys.",
-        "stack": ["C", "Python", "STM32 HAL", "Assembly"],
-        "github": "https://github.com/davidbits/EEE3097S-Project",
-        "reportUrl": "/assets/pdf/arm_sharc_comms.pdf",
-        "overview": "Designed for secure data transmission from Antarctic sensor buoys over the Iridium satellite network. The goal was to minimize transmission costs via compression while ensuring data security.",
-        "objectives": [
-            "Implement LZSS compression and Blowfish encryption on STM32F051.",
-            "Ensure data integrity with CRC-32 checksums.",
-            "Optimize for extremely limited memory and processing power."
-        ],
-        "details": "Data from an IMU is processed to extract Fourier coefficients. The system preserves at least 25% of lower coefficients while compressing the rest.",
-        "challenges": "Limited memory (8KB RAM) and 48MHz clock speed restricted algorithm choices. Debugging logic errors between Python prototypes and C firmware implementation.",
-        "results": "Achieved average compression ratio of 1.812 and encryption throughput of ~910 bytes/sec. Successfully validated against acceptance test procedures.",
-        "images": [
-            {
-                "src": "/assets/img/sys_op_diag.png",
-                "alt": "System Diagram",
-                "caption": "Figure 1: System Operation Diagram"
-            },
-            {
-                "src": "/assets/img/compress-speed.png",
-                "alt": "Compression Stats",
-                "caption": "Figure 2: Compression Speed Graph"
-            },
-            {
-                "src": "/assets/img/encrypt-speed.png",
-                "alt": "Encryption Stats",
-                "caption": "Figure 3: Encryption Speed Graph"
-            }
-        ]
-    },
-    {
-        "id": "yoda",
-        "name": "MD5 vs MD6 Analysis",
-        "title": "Comparative Analysis and Optimization of MD5 & MD6 Hashing Algorithms",
-        "description": "A digital cage match pitting MD5 against MD6 using C++, OpenCL, and Verilog.",
-        "stack": ["C++", "OpenCL", "Verilog", "Vivado"],
-        "github": "https://github.com/davidbits/EEE4120F-YODA",
-        "reportUrl": "/assets/pdf/yoda.pdf",
-        "overview": "Evaluated the performance trade-offs between software (C++), parallel computing (OpenCL), and hardware acceleration (Verilog) for cryptographic hashing.",
-        "objectives": [
-            "Implement MD5 (sequential) and MD6 (parallelizable) across all platforms.",
-            "Benchmark execution time and throughput.",
-            "Analyze the efficiency of GPU offloading vs FPGA synthesis."
-        ],
-        "challenges": "MD5 is inherently sequential, limiting parallel gains. OpenCL implementations faced bottlenecks in kernel data transfer. Verilog implementation was fast but limited by input size constraints.",
-        "results": "Parallel C++ MD6 achieved significant speedups on multicore CPUs. Verilog MD5 was fastest for small inputs but lacked flexibility. OpenCL proved overhead-heavy for this specific workload.",
-        "images": [
-            {
-                "src": "/assets/img/comparison_execution_time.png",
-                "alt": "Execution Time",
-                "caption": "Figure 1: Execution Time Analysis"
-            },
-            {
-                "src": "/assets/img/comparison_throughput.png",
-                "alt": "Throughput",
-                "caption": "Figure 1: Throughput Analysis"
-            }
-        ]
-    },
-    {
-        "id": "enviro",
-        "name": "Enviro-Sense Grid",
-        "title": "Enviro-Sense: Biomonitoring Grid for Apex Predators",
-        "description": "Wireless sensor grid using ESP32 and Pi Zeros to monitor raptor nesting sites.",
-        "stack": ["C++", "Arduino", "Raspberry Pi", "ESP32"],
-        "reportUrl": "/assets/pdf/enviro-sense.pdf",
-        "overview": "A low-cost Wireless Sensor Network (WSN) designed to monitor temperature and humidity at remote raptor nesting sites to aid conservation efforts.",
-        "objectives": [
-            "Develop a cost-effective monitoring node (<$20).",
-            "Ensure reliable wireless transmission to rendezvous nodes.",
-            "Maximize battery life via deep-sleep cycles."
-        ],
-        "details": "Used ESP32-PICO-D4 motes with DHT11 sensors and DS3231 RTCs. Nodes wake up, sample data, transmit, and immediately sleep to conserve power.",
-        "challenges": "Balancing cost vs. data accuracy. Managing power budgets for long-term deployment without maintenance. Ensuring data integrity over lossy wireless links.",
-        "results": "Prototype successfully gathered and transmitted accurate telemetry. Validated low-power operations suitable for field deployment."
-    }
+	{
+		"id": "sortpedia",
+		"name": "SortPedia",
+		"title": "SortPedia: The Interactive Sorting Algorithm Encyclopedia",
+		"description": "An interactive encyclopedia for 30+ sorting algorithms, featuring a real-time visualizer, side-by-side racing, and a browser-based performance benchmark engine.",
+		"stack": [
+			"SvelteKit",
+			"Svelte 5 Runes",
+			"TypeScript",
+			"TailwindCSS",
+			"Web Workers",
+			"KaTeX"
+		],
+		"github": "https://github.com/astraen-dev/sortpedia",
+		"link": "https://sortpedia.com",
+		"overview": "SortPedia is a modern, interactive encyclopedia that bridges the gap between abstract computer science theory and intuitive visual understanding. It allows users to watch, race, and benchmark over 30 sorting algorithms—from industry standards like Quick Sort to esoteric ones like Thanos Sort—directly in the browser, providing a comprehensive educational tool for students and developers.",
+		"objectives": [
+			"Develop an interactive visualizer to render algorithm execution step-by-step, with full playback controls (play, pause, step forward/backward, speed adjust).",
+			"Implement a side-by-side 'Algorithm Racing' feature to visually compare the performance, stability, and access patterns of any two algorithms on identical datasets.",
+			"Build a performance benchmarking tool using Web Workers to run thousands of iterations off the main thread, measuring raw execution time without freezing the UI.",
+			"Create a comprehensive library for each algorithm, complete with LaTeX-rendered complexity analysis, detailed explanations, and clean, copy-pasteable JavaScript implementations."
+		],
+		"challenges": "The primary technical challenge was capturing the precise state of an algorithm at every critical operation (e.g., a comparison or a swap) to enable step-by-step visualization. This was solved by implementing each sorting algorithm as a JavaScript Generator Function (function*). This approach allowed the sorting logic to yield control back to the visualizer engine at each step, passing a detailed event payload that described the operation performed. This enabled robust and accurate playback, pausing, and stepping capabilities without complex state management or code instrumentation."
+	},
+	{
+		"id": "fers-monorepo",
+		"name": "FERS (Masters)",
+		"title": "The Flexible Extensible Radar Simulator (Masters)",
+		"description": "A comprehensive suite of tools for signal-level radar simulation including a C++23 core and React/Tauri UI.",
+		"stack": ["C++23", "Rust", "Tauri", "React", "TypeScript", "CMake"],
+		"github": "https://github.com/davidbits/FERS",
+		"overview": "FERS is a signal-level radar simulator structured as a monorepo containing a high-performance C++23 simulation engine (libfers) and a modern desktop UI (fers-ui). It enables the construction and visualization of complex radar scenarios with a unified event-driven architecture.",
+		"objectives": [
+			"Modernize the legacy C++98 engine to C++23 with a unified event-driven architecture.",
+			"Develop a cross-platform desktop UI using Tauri and React for scenario visualization.",
+			"Implement a stable C-API and XML schema contract for interoperability.",
+			"Ensure high-performance simulation of mono/multistatic and pulsed/CW systems."
+		],
+		"challenges": "Balancing performance optimizations with code maintainability during the modernization process. Designing an intuitive UI that effectively visualizes complex radar scenarios and data.",
+		"results": "Successfully designed and implemented a modern radar simulation suite with significant performance improvements and an enhanced user experience. The project demonstrated the viability of using modern C++ and web technologies for complex simulation tasks."
+	},
+	{
+		"id": "rainvu",
+		"name": "RainVu",
+		"title": "RainVu: Rainfall Logger & Analytics",
+		"description": "A modern Flutter app for tracking rainfall data with powerful local-first analytics.",
+		"stack": ["Flutter", "Dart", "Riverpod", "SQLite", "Firebase"],
+		"github": "https://github.com/astraen-dev/RainVu",
+		"appStoreUrl": "https://apps.apple.com/us/app/rainvu/id6754812264",
+		"playStoreUrl": "https://play.google.com/store/apps/details?id=com.astraen.rainvu",
+		"overview": "RainVu is a privacy-focused mobile application for farmers and weather enthusiasts to log and analyze rainfall data. It features a local-first architecture using Drift (SQLite) for offline capability and custom charting for historical analysis.",
+		"objectives": [
+			"Build a robust local-first architecture using Drift and Riverpod.",
+			"Implement complex analytics for MTD/YTD totals and seasonal trends.",
+			"Ensure data portability with JSON/CSV export and import features."
+		],
+		"challenges": "Designing a responsive charting interface that handles large historical datasets smoothly on mobile devices. Managing complex state synchronization between local databases and UI states.",
+		"results": "Released a fully featured app with secure local storage, diverse chart visualizations, and a seamless user experience across Android and iOS platforms."
+	},
+	{
+		"id": "fers-fyp",
+		"name": "FERS (FYP)",
+		"title": "Modernising the FERS Software Package (Undergrad)",
+		"description": "Dragging a legacy radar simulator (FERS) from C++98/03 into the C++20/23 era.",
+		"stack": ["C++20/23", "GitHub Actions", "CMake", "Valgrind", "HDF5"],
+		"github": "https://github.com/davidbits/FERS",
+		"reportUrl": "/assets/pdf/modern_fers_software.pdf",
+		"overview": "This project focused on updating the Flexible, Extensible Radar Simulator (FERS) to meet modern C++ standards. Originally developed in C++98/03, FERS is a vital tool for the Radar and Remote Sensing Group at UCT. The modernization enhanced performance, readability, and maintainability.",
+		"objectives": [
+			"Upgrade codebase to C++20/23 features (concepts, ranges, modules).",
+			"Implement performance optimizations (multithreading, smart pointers).",
+			"Ensure backward compatibility for simulation integrity.",
+			"Conduct thorough regression testing and profiling."
+		],
+		"challenges": "Ensuring backward compatibility while refactoring core memory management logic. Managing complexities of new C++ features and mitigating regression risks during extensive overhauls.",
+		"results": "Achieved speedups ranging from 1.46x to 3.55x. Eliminated memory leaks via smart pointers. Achieved 90.5% line coverage and 95.8% function coverage in regression testing.",
+		"images": [
+			{
+				"src": "/assets/img/average_cpu_usage.png",
+				"alt": "CPU Usage",
+				"caption": "Figure 1: CPU Usage Comparison"
+			},
+			{
+				"src": "/assets/img/average_speedups.png",
+				"alt": "Speedups",
+				"caption": "Figure 2: Speedup Benchmarks"
+			}
+		]
+	},
+	{
+		"id": "arm",
+		"name": "STM32 Data Encryption",
+		"title": "Encryption and Compression on Resource-Constrained Embedded ARM MCs",
+		"description": "Implementing LZSS compression and Blowfish encryption on an STM32 chip for Antarctic buoys.",
+		"stack": ["C", "Python", "STM32 HAL", "Assembly"],
+		"github": "https://github.com/davidbits/EEE3097S-Project",
+		"reportUrl": "/assets/pdf/arm_sharc_comms.pdf",
+		"overview": "Designed for secure data transmission from Antarctic sensor buoys over the Iridium satellite network. The goal was to minimize transmission costs via compression while ensuring data security.",
+		"objectives": [
+			"Implement LZSS compression and Blowfish encryption on STM32F051.",
+			"Ensure data integrity with CRC-32 checksums.",
+			"Optimize for extremely limited memory and processing power."
+		],
+		"details": "Data from an IMU is processed to extract Fourier coefficients. The system preserves at least 25% of lower coefficients while compressing the rest.",
+		"challenges": "Limited memory (8KB RAM) and 48MHz clock speed restricted algorithm choices. Debugging logic errors between Python prototypes and C firmware implementation.",
+		"results": "Achieved average compression ratio of 1.812 and encryption throughput of ~910 bytes/sec. Successfully validated against acceptance test procedures.",
+		"images": [
+			{
+				"src": "/assets/img/sys_op_diag.png",
+				"alt": "System Diagram",
+				"caption": "Figure 1: System Operation Diagram"
+			},
+			{
+				"src": "/assets/img/compress-speed.png",
+				"alt": "Compression Stats",
+				"caption": "Figure 2: Compression Speed Graph"
+			},
+			{
+				"src": "/assets/img/encrypt-speed.png",
+				"alt": "Encryption Stats",
+				"caption": "Figure 3: Encryption Speed Graph"
+			}
+		]
+	},
+	{
+		"id": "yoda",
+		"name": "MD5 vs MD6 Analysis",
+		"title": "Comparative Analysis and Optimization of MD5 & MD6 Hashing Algorithms",
+		"description": "A digital cage match pitting MD5 against MD6 using C++, OpenCL, and Verilog.",
+		"stack": ["C++", "OpenCL", "Verilog", "Vivado"],
+		"github": "https://github.com/davidbits/EEE4120F-YODA",
+		"reportUrl": "/assets/pdf/yoda.pdf",
+		"overview": "Evaluated the performance trade-offs between software (C++), parallel computing (OpenCL), and hardware acceleration (Verilog) for cryptographic hashing.",
+		"objectives": [
+			"Implement MD5 (sequential) and MD6 (parallelizable) across all platforms.",
+			"Benchmark execution time and throughput.",
+			"Analyze the efficiency of GPU offloading vs FPGA synthesis."
+		],
+		"challenges": "MD5 is inherently sequential, limiting parallel gains. OpenCL implementations faced bottlenecks in kernel data transfer. Verilog implementation was fast but limited by input size constraints.",
+		"results": "Parallel C++ MD6 achieved significant speedups on multicore CPUs. Verilog MD5 was fastest for small inputs but lacked flexibility. OpenCL proved overhead-heavy for this specific workload.",
+		"images": [
+			{
+				"src": "/assets/img/comparison_execution_time.png",
+				"alt": "Execution Time",
+				"caption": "Figure 1: Execution Time Analysis"
+			},
+			{
+				"src": "/assets/img/comparison_throughput.png",
+				"alt": "Throughput",
+				"caption": "Figure 1: Throughput Analysis"
+			}
+		]
+	},
+	{
+		"id": "enviro",
+		"name": "Enviro-Sense Grid",
+		"title": "Enviro-Sense: Biomonitoring Grid for Apex Predators",
+		"description": "Wireless sensor grid using ESP32 and Pi Zeros to monitor raptor nesting sites.",
+		"stack": ["C++", "Arduino", "Raspberry Pi", "ESP32"],
+		"reportUrl": "/assets/pdf/enviro-sense.pdf",
+		"overview": "A low-cost Wireless Sensor Network (WSN) designed to monitor temperature and humidity at remote raptor nesting sites to aid conservation efforts.",
+		"objectives": [
+			"Develop a cost-effective monitoring node (<$20).",
+			"Ensure reliable wireless transmission to rendezvous nodes.",
+			"Maximize battery life via deep-sleep cycles."
+		],
+		"details": "Used ESP32-PICO-D4 motes with DHT11 sensors and DS3231 RTCs. Nodes wake up, sample data, transmit, and immediately sleep to conserve power.",
+		"challenges": "Balancing cost vs. data accuracy. Managing power budgets for long-term deployment without maintenance. Ensuring data integrity over lossy wireless links.",
+		"results": "Prototype successfully gathered and transmitted accurate telemetry. Validated low-power operations suitable for field deployment."
+	}
 ]

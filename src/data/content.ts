@@ -1,12 +1,12 @@
-import ABOUT_DATA from './jsons/about.json';
-import SKILLS_DATA from './jsons/skills.json';
-import PROJECTS_DATA from './jsons/projects.json';
-import CONTACT_DATA from './jsons/contact.json';
-import EXPERIENCE_DATA from './jsons/experience.json';
-import EDUCATION_DATA from './jsons/education.json';
-import VOLUNTEER_DATA from './jsons/volunteer.json';
-import AWARDS_DATA from './jsons/awards.json';
-import INTERESTS_DATA from './jsons/interests.json';
+import ABOUT_DATA from "./jsons/about.json";
+import AWARDS_DATA from "./jsons/awards.json";
+import CONTACT_DATA from "./jsons/contact.json";
+import EDUCATION_DATA from "./jsons/education.json";
+import EXPERIENCE_DATA from "./jsons/experience.json";
+import INTERESTS_DATA from "./jsons/interests.json";
+import PROJECTS_DATA from "./jsons/projects.json";
+import SKILLS_DATA from "./jsons/skills.json";
+import VOLUNTEER_DATA from "./jsons/volunteer.json";
 
 export const ABOUT = ABOUT_DATA;
 export const SKILLS = SKILLS_DATA;

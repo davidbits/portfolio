@@ -1,61 +1,46 @@
 {
-    "name": "portfolio",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "prepare": "husky",
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "fixup": "pnpm format && pnpm lint && pnpm test",
-        "lint": "prettier --check . --ignore-path .prettierignore && eslint .",
-        "format": "prettier --write .",
-        "test": "vitest --run",
-        "test:watch": "vitest --watch",
-        "test:coverage": "vitest run --coverage"
-    },
-    "dependencies": {
-        "@react-pdf/renderer": "^4.3.2",
-        "@vercel/analytics": "^2.0.1",
-        "gray-matter": "^4.0.3",
-        "katex": "^0.16.38",
-        "next": "16.1.6",
-        "next-mdx-remote": "^6.0.0",
-        "react": "19.2.4",
-        "react-dom": "19.2.4",
-        "rehype-katex": "^7.0.1",
-        "remark-math": "^6.0.0"
-    },
-    "devDependencies": {
-        "@tailwindcss/postcss": "^4.2.1",
-        "@tailwindcss/typography": "^0.5.19",
-        "@testing-library/dom": "^10.4.1",
-        "@testing-library/jest-dom": "^6.9.1",
-        "@testing-library/react": "^16.3.2",
-        "@types/katex": "^0.16.8",
-        "@types/node": "^25.5.0",
-        "@types/react": "^19.2.14",
-        "@types/react-dom": "^19.2.3",
-        "@vitejs/plugin-react": "^6.0.1",
-        "@vitest/coverage-v8": "4.1.0",
-        "eslint": "^9.39.2",
-        "eslint-config-next": "16.1.6",
-        "husky": "^9.1.7",
-        "jsdom": "^29.0.0",
-        "lint-staged": "^16.4.0",
-        "prettier": "^3.8.1",
-        "prettier-plugin-tailwindcss": "^0.7.2",
-        "tailwindcss": "^4.2.1",
-        "typescript": "^5.9.3",
-        "vite-tsconfig-paths": "^6.1.1",
-        "vitest": "^4.1.0"
-    },
-    "lint-staged": {
-        "*.{md,json,yml,yaml}": "prettier --write",
-        "**/*.{js,ts,tsx}": [
-            "prettier --write",
-            "pnpm exec eslint --fix"
-        ]
-    },
-    "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be"
+	"name": "portfolio",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"fixup": "bun format && bun lint",
+		"format": "bunx --bun @biomejs/biome format --write .",
+		"lint": "bunx --bun @biomejs/biome lint --write .",
+		"check": "bunx --bun @biomejs/biome check --write .",
+		"ci:check": "bunx --bun @biomejs/biome check .",
+		"prepare": "husky"
+	},
+	"dependencies": {
+		"@react-pdf/renderer": "^4.3.2",
+		"@vercel/analytics": "^2.0.1",
+		"gray-matter": "^4.0.3",
+		"katex": "^0.16.39",
+		"next": "16.1.6",
+		"next-mdx-remote": "^6.0.0",
+		"react": "19.2.4",
+		"react-dom": "19.2.4",
+		"rehype-katex": "^7.0.1",
+		"remark-math": "^6.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.4.8",
+		"@tailwindcss/postcss": "^4.2.2",
+		"@tailwindcss/typography": "^0.5.19",
+		"@types/bun": "latest",
+		"@types/katex": "^0.16.8",
+		"@types/node": "^25.5.0",
+		"@types/react": "^19.2.14",
+		"@types/react-dom": "^19.2.3",
+		"@vitejs/plugin-react": "^6.0.1",
+		"husky": "^9.1.7",
+		"jsdom": "^29.0.0",
+		"prettier": "^3.8.1",
+		"prettier-plugin-tailwindcss": "^0.7.2",
+		"tailwindcss": "^4.2.2",
+		"typescript": "^5.9.3",
+		"vite-tsconfig-paths": "^6.1.1"
+	}
 }

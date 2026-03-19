@@ -1,0 +1,138 @@
+---
+import { PROJECTS } from "@/data/content";
+---
+
+<div class="grid gap-8">
+	{PROJECTS.map((project) => (
+		<article
+			class="group relative cursor-pointer rounded-lg border border-transparent p-4 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-gray-200/75 hover:bg-gray-50 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+			data-project-btn
+			data-target={`modal-${project.id}`}
+			tabindex="0"
+			role="button"
+		>
+			<div class="flex flex-col gap-1">
+				<h3 class="text-2xl font-bold group-hover:text-blue-700">{project.title}</h3>
+				<div class="text-sm italic text-gray-500">{project.stack.join(" · ")}</div>
+				<p class="mt-2 text-gray-700">{project.overview || project.description}</p>
+
+				<!-- Card Action Row -->
+				<div class="mt-3 flex flex-wrap items-center gap-4">
+					{project.link && <a href={project.link} target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-blue-600 hover:underline">Visit Website &rarr;</a>}
+					{project.github && <a href={project.github} target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-blue-600 hover:underline">View Source &rarr;</a>}
+					{project.reportUrl && <a href={project.reportUrl} target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-blue-600 hover:underline">Download PDF Report &darr;</a>}
+
+                    {project.appStoreUrl && (
+                        <a href={project.appStoreUrl} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md bg-black px-3 py-1.5 text-xs font-medium text-white hover:bg-gray-800">
+                            <svg role="img" viewBox="0 0 24 24" class="h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701" /></svg>
+                            App Store
+                        </a>
+                    )}
+					{project.playStoreUrl && (
+                        <a href={project.playStoreUrl} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-md bg-black px-3 py-1.5 text-xs font-medium text-white hover:bg-gray-800">
+                            <svg role="img" viewBox="0 0 24 24" class="h-5 w-5 fill-current" xmlns="http://www.w3.org/2000/svg"><path d="M22.018 13.298l-3.919 2.218-3.515-3.493 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.594zM1.337.924a1.486 1.486 0 0 0-.112.568v21.017c0 .217.045.419.124.6l11.155-11.087L1.337.924zm12.207 10.065l3.258-3.238L3.45.195a1.466 1.466 0 0 0-.946-.179l11.04 10.973zm0 2.067l-11 10.933c.298.036.612-.016.906-.183l13.324-7.54-3.23-3.21z" /></svg>
+                            Play Store
+                        </a>
+                    )}
+				</div>
+			</div>
+		</article>
+
+		<!-- Native HTML5 Dialog Modal -->
+		<dialog id={`modal-${project.id}`} class="w-full max-w-3xl rounded-xl p-0 shadow-2xl backdrop:bg-black/60 open:flex flex-col">
+			<div class="relative max-h-[90vh] overflow-y-auto p-8 bg-white">
+				<button class="modal-close absolute right-4 top-4 rounded-full p-2 text-gray-500 hover:bg-gray-100 hover:text-black" aria-label="Close modal">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+					</svg>
+				</button>
+
+				<h2 class="mb-1 pr-8 text-3xl font-bold text-gray-900">{project.title}</h2>
+				<div class="mb-6 flex flex-wrap gap-2 text-sm text-gray-500">
+					{project.stack.map((tech) => (
+						<span class="rounded bg-gray-100 px-2 py-1 font-medium text-gray-700">{tech}</span>
+					))}
+				</div>
+
+				<div class="space-y-6 text-gray-700">
+					<div>
+						<h3 class="mb-2 font-bold text-gray-900">Overview</h3>
+						<p class="leading-relaxed">{project.overview}</p>
+					</div>
+
+					{project.objectives && (
+						<div>
+							<h3 class="mb-2 font-bold text-gray-900">Key Objectives</h3>
+							<ul class="list-inside list-disc space-y-1">
+								{project.objectives.map((obj) => <li>{obj}</li>)}
+							</ul>
+						</div>
+					)}
+
+					{project.images && project.images.length > 0 && (
+						<div class="grid gap-6 sm:grid-cols-2">
+							{project.images.map((img) => (
+								<div class="space-y-2">
+									<div class="relative overflow-hidden rounded-lg border border-gray-100 bg-gray-50">
+										<img src={img.src} alt={img.alt} class="h-auto w-full object-cover" loading="lazy" />
+									</div>
+									<p class="text-center text-xs italic text-gray-500">{img.caption}</p>
+								</div>
+							))}
+						</div>
+					)}
+				</div>
+
+				<!-- Modal Action Row -->
+				<div class="mt-8 flex flex-wrap items-center gap-4 border-t pt-6">
+					{project.link && <a href={project.link} target="_blank" rel="noopener noreferrer" class="rounded bg-black px-4 py-2 font-medium text-white hover:bg-gray-800">Visit Website</a>}
+					{project.github && <a href={project.github} target="_blank" rel="noopener noreferrer" class="font-medium text-blue-600 hover:underline">View Source</a>}
+					{project.reportUrl && <a href={project.reportUrl} target="_blank" rel="noopener noreferrer" class="font-medium text-blue-600 hover:underline">Download Report PDF</a>}
+				</div>
+			</div>
+		</dialog>
+	))}
+</div>
+
+<script>
+	// Run on initial load and after Astro view transitions
+	document.addEventListener('astro:page-load', () => {
+		const btns = document.querySelectorAll<HTMLDivElement>('[data-project-btn]');
+		const closeBtns = document.querySelectorAll<HTMLButtonElement>('.modal-close');
+
+		// Open Modal
+		btns.forEach(btn => {
+			btn.addEventListener('click', () => {
+				const targetId = btn.getAttribute('data-target');
+				const dialog = document.getElementById(targetId as string) as HTMLDialogElement;
+				dialog?.showModal();
+				document.body.style.overflow = 'hidden';
+			});
+			btn.addEventListener('keydown', (e) => {
+				if (e.key === 'Enter' || e.key === ' ') {
+					e.preventDefault();
+					btn.click();
+				}
+			});
+		});
+
+		// Close Modal (Button click)
+		closeBtns.forEach(btn => {
+			btn.addEventListener('click', () => {
+				const dialog = btn.closest('dialog') as HTMLDialogElement;
+				dialog?.close();
+				document.body.style.overflow = 'auto';
+			});
+		});
+
+		// Close Modal (Backdrop click)
+		document.querySelectorAll('dialog').forEach(dialog => {
+			dialog.addEventListener('click', (e) => {
+				if (e.target === dialog) {
+					dialog.close();
+					document.body.style.overflow = 'auto';
+				}
+			});
+		});
+	});
+</script>

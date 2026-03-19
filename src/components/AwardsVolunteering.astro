@@ -1,0 +1,37 @@
+---
+import { AWARDS, VOLUNTEER } from "@/data/content";
+---
+<section id="awards-volunteering" aria-labelledby="av-heading" class="grid grid-cols-1 gap-12 md:grid-cols-2">
+	<div>
+		<h2 id="av-heading" class="mb-4 border-b pb-2 text-2xl font-semibold">Awards</h2>
+		<ul class="list-inside list-disc space-y-2 text-gray-700">
+			{AWARDS.map((award) => (
+				<li>
+					{award.link ? (
+						<a href={award.link} target="_blank" rel="noopener noreferrer" class="font-medium text-blue-600 hover:underline">{award.title}</a>
+					) : (
+						<span class="font-medium">{award.title}</span>
+					)}
+					{award.year && <span class="text-gray-500"> ({award.year})</span>}
+				</li>
+			))}
+		</ul>
+	</div>
+	<div>
+		<h2 class="mb-4 border-b pb-2 text-2xl font-semibold">Volunteering</h2>
+		<ul class="space-y-4">
+			{VOLUNTEER.map((vol) => (
+				<li class="flex flex-col gap-1">
+					<div class="font-medium">
+						{vol.role} @ {vol.link ? (
+							<a href={vol.link} target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">{vol.organization}</a>
+						) : (
+							vol.organization
+						)}
+					</div>
+					<p class="text-sm text-gray-600">{vol.description}</p>
+				</li>
+			))}
+		</ul>
+	</div>
+</section>

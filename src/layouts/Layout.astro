@@ -1,0 +1,55 @@
+---
+import { ClientRouter } from "astro:transitions";
+import { ABOUT, CONTACT } from "@/data/content";
+import "@/styles/globals.css";
+
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+}
+
+const {
+	title = "David Young | Software Engineer",
+	description = `Personal website for ${ABOUT.name}, a ${ABOUT.role}.`,
+	image = "/og-image.png",
+} = Astro.props;
+
+const baseUrl = "https://davidyoung.co.za";
+const canonicalURL = new URL(Astro.url.pathname, baseUrl);
+
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	name: ABOUT.name,
+	jobTitle: ABOUT.role,
+	url: baseUrl,
+	sameAs: [`https://${CONTACT.github}`, `https://${CONTACT.linkedin}`],
+	image: new URL(image, baseUrl).href,
+};
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="author" content={ABOUT.name} />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, baseUrl)} />
+
+		<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+		<ClientRouter />
+	</head>
+	<body class="antialiased">
+		<slot />
+	</body>
+</html>

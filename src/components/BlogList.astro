@@ -1,0 +1,163 @@
+---
+interface Props {
+	posts: {
+		slug: string;
+		title: string;
+		date: string;
+		description: string;
+		tags: string[];
+	}[];
+}
+
+const { posts } = Astro.props;
+
+// Calculate unique tags at build time
+const allTags = [...new Set(posts.flatMap((p) => p.tags))].sort();
+---
+
+<div class="space-y-12">
+	<!-- Search and Filter Controls -->
+	<div class="space-y-6">
+		<div class="relative">
+			<input
+				type="text"
+				id="blog-search"
+				placeholder="Search articles..."
+				class="w-full rounded-xl border border-gray-200 bg-gray-50 px-5 py-4 pl-12 text-lg outline-none transition-all focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10"
+			/>
+			<svg class="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+			</svg>
+		</div>
+
+		{allTags.length > 0 && (
+			<div class="flex flex-wrap gap-2" id="tag-container">
+				{allTags.map((tag) => (
+					<button
+						data-tag={tag}
+						class="tag-btn rounded-full bg-gray-100 px-4 py-1.5 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-200"
+					>
+						{tag}
+					</button>
+				))}
+				<button id="clear-filters" class="hidden px-3 py-1.5 text-sm text-gray-400 hover:text-black hover:underline">
+					Clear filters
+				</button>
+			</div>
+		)}
+	</div>
+
+	<!-- Results Grid -->
+	<div class="space-y-10" id="blog-posts">
+		{posts.map((post) => (
+			<article
+				class="blog-post group relative flex flex-col items-start"
+				data-title={post.title.toLowerCase()}
+				data-desc={post.description.toLowerCase()}
+				data-tags={JSON.stringify(post.tags)}
+			>
+				<div class="relative z-10 mb-3 flex flex-wrap gap-2">
+					{post.tags.map((tag) => (
+						<span class="text-xs font-semibold tracking-wider text-blue-600 uppercase">#{tag}</span>
+					))}
+				</div>
+
+				<h2 class="text-2xl font-bold tracking-tight text-gray-900 group-hover:text-blue-600">
+					<a href={`/blog/${post.slug}`}>
+						<span class="absolute -inset-x-6 -inset-y-6 z-0 scale-95 rounded-2xl bg-gray-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100" />
+						<span class="relative z-10">{post.title}</span>
+					</a>
+				</h2>
+
+				<time class="relative z-10 mb-3 mt-2 block text-sm text-gray-400">
+					{new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+				</time>
+
+				<p class="relative z-10 leading-relaxed text-gray-600">{post.description}</p>
+
+				<!-- Read Article Link -->
+                <a
+                    href={`/blog/${post.slug}`}
+                    class="relative z-10 mt-4 flex items-center text-sm font-medium text-blue-600 visited:text-blue-600 hover:text-blue-600"
+                >
+                    Read article
+                    <svg class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+			</article>
+		))}
+
+		<div id="no-results" class="hidden py-12 text-center text-lg text-gray-500">
+			No articles found matching your criteria.
+		</div>
+	</div>
+</div>
+
+<script>
+	document.addEventListener('astro:page-load', () => {
+		const searchInput = document.getElementById('blog-search') as HTMLInputElement;
+		const tagBtns = document.querySelectorAll<HTMLButtonElement>('.tag-btn');
+		const clearBtn = document.getElementById('clear-filters');
+		const posts = document.querySelectorAll<HTMLElement>('.blog-post');
+		const noResults = document.getElementById('no-results');
+
+		let searchQuery = "";
+		let selectedTags = new Set<string>();
+
+		function filterPosts() {
+			let visibleCount = 0;
+
+			posts.forEach(post => {
+				const title = post.dataset.title || "";
+				const desc = post.dataset.desc || "";
+				const tags = JSON.parse(post.dataset.tags || "[]");
+
+				const matchesSearch = title.includes(searchQuery) || desc.includes(searchQuery);
+				const matchesTags = selectedTags.size === 0 || [...selectedTags].every(t => tags.includes(t));
+
+				if (matchesSearch && matchesTags) {
+					post.style.display = "flex";
+					visibleCount++;
+				} else {
+					post.style.display = "none";
+				}
+			});
+
+			if (noResults) noResults.style.display = visibleCount === 0 ? "block" : "none";
+			if (clearBtn) clearBtn.style.display = selectedTags.size > 0 || searchQuery !== "" ? "inline-block" : "none";
+		}
+
+		searchInput?.addEventListener('input', (e) => {
+			searchQuery = (e.target as HTMLInputElement).value.toLowerCase();
+			filterPosts();
+		});
+
+		tagBtns.forEach(btn => {
+			btn.addEventListener('click', () => {
+				const tag = btn.dataset.tag!;
+				if (selectedTags.has(tag)) {
+					selectedTags.delete(tag);
+					btn.classList.replace('bg-black', 'bg-gray-100');
+					btn.classList.replace('text-white', 'text-gray-600');
+				} else {
+					selectedTags.add(tag);
+					btn.classList.replace('bg-gray-100', 'bg-black');
+					btn.classList.replace('text-gray-600', 'text-white');
+				}
+				filterPosts();
+			});
+		});
+
+		clearBtn?.addEventListener('click', () => {
+			searchQuery = "";
+			searchInput.value = "";
+			selectedTags.clear();
+			tagBtns.forEach(btn => {
+				btn.classList.replace('bg-black', 'bg-gray-100');
+				btn.classList.replace('text-white', 'text-gray-600');
+			});
+			filterPosts();
+		});
+	});
+</script>

@@ -1,0 +1,14 @@
+---
+import { INTERESTS } from "@/data/content";
+---
+<section id="interests" aria-labelledby="interests-heading">
+	<h2 id="interests-heading" class="mb-6 border-b pb-2 text-3xl font-semibold">Interests</h2>
+	<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+		{INTERESTS.map((interest) => (
+			<div class="flex flex-col gap-2">
+				<h3 class="text-lg font-bold text-gray-900">{interest.title}</h3>
+				<p class="text-gray-700">{interest.description}</p>
+			</div>
+		))}
+	</div>
+</section>

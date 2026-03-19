@@ -1,0 +1,33 @@
+---
+import AwardsVolunteering from "@/components/AwardsVolunteering.astro";
+import ContactSection from "@/components/ContactSection.astro";
+import Education from "@/components/Education.astro";
+import Experience from "@/components/Experience.astro";
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import Interests from "@/components/Interests.astro";
+import ProjectsGrid from "@/components/ProjectsGrid.astro";
+import Skills from "@/components/Skills.astro";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout>
+	<div class="mx-auto max-w-4xl bg-white p-8 font-sans text-gray-800">
+		<Header />
+		<main class="space-y-16">
+			<Experience />
+			<section id="projects" aria-labelledby="projects-heading">
+				<h2 id="projects-heading" class="mb-6 border-b pb-2 text-3xl font-semibold">
+					Featured Projects
+				</h2>
+				<ProjectsGrid />
+			</section>
+			<Skills />
+			<Education />
+			<AwardsVolunteering />
+			<Interests />
+			<ContactSection />
+		</main>
+		<Footer />
+	</div>
+</Layout>

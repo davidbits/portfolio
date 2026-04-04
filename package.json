@@ -18,21 +18,23 @@
 		"prepare": "husky"
 	},
 	"dependencies": {
-		"@astrojs/mdx": "^4.0.8",
+		"@astrojs/check": "^0.9.8",
+		"@astrojs/mdx": "^4.3.14",
 		"@tailwindcss/typography": "^0.5.19",
-		"@vercel/analytics": "^1.4.1",
-		"astro": "^5.4.1",
-		"katex": "^0.16.39",
+		"@vercel/analytics": "^1.6.1",
+		"astro": "^5.18.1",
+		"gray-matter": "^4.0.3",
+		"katex": "^0.16.44",
 		"rehype-katex": "^7.0.1",
 		"remark-math": "^6.0.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.8",
-		"@tailwindcss/vite": "^4.0.8",
+		"@tailwindcss/vite": "^4.2.2",
 		"@types/bun": "latest",
 		"@types/katex": "^0.16.8",
 		"husky": "^9.1.7",
-		"tailwindcss": "^4.0.8",
-		"typescript": "^5.7.3"
+		"tailwindcss": "^4.2.2",
+		"typescript": "^6.0.2"
 	}
 }

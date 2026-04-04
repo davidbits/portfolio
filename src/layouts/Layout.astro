@@ -47,7 +47,7 @@ const jsonLd = {
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={new URL(image, baseUrl)} />
 
-		<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 		<ClientRouter />
 		<Analytics />
 	</head>

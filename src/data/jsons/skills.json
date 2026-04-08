@@ -1,5 +1,5 @@
 {
-	"languages": ["C++", "Flutter", "Python", "Rust", "TypeScript", "Svelte"],
+	"languages": ["C++", "Python", "Rust", "Go", "TypeScript", "Dart"],
 	"frameworks": [
 		"FastAPI",
 		"Tauri",
@@ -9,7 +9,7 @@
 		"Tailwind CSS"
 	],
 	"cloud": ["Firebase", "Google Cloud Platform (GCP)"],
-	"tools": ["Docker", "Git/GitHub", "Linux (Ubuntu)", "JetBrains IDEs"],
+	"tools": ["Docker", "Git/GitHub", "Linux", "JetBrains IDEs"],
 	"soft": [
 		"Problem Solving",
 		"System Design",

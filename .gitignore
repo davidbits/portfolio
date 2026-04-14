@@ -3,6 +3,8 @@ prompts.txt
 list_files.py
 collect_files.py
 output.txt
+entities.json
+mempalace.yaml
 
 design_docs/
 venv/

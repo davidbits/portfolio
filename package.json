@@ -20,7 +20,6 @@
 	"dependencies": {
 		"@astrojs/check": "^0.9.8",
 		"@astrojs/mdx": "^4.3.14",
-		"@astrojs/react": "^5.0.4",
 		"@react-pdf/renderer": "^4.5.1",
 		"@tailwindcss/typography": "^0.5.19",
 		"@vercel/analytics": "^1.6.1",
@@ -28,7 +27,6 @@
 		"gray-matter": "^4.0.3",
 		"katex": "^0.16.45",
 		"react": "^19.2.5",
-		"react-dom": "^19.2.5",
 		"rehype-katex": "^7.0.1",
 		"remark-math": "^6.0.0"
 	},
@@ -38,7 +36,6 @@
 		"@types/bun": "latest",
 		"@types/katex": "^0.16.8",
 		"@types/react": "^19.2.14",
-		"@types/react-dom": "^19.2.3",
 		"husky": "^9.1.7",
 		"tailwindcss": "^4.2.4",
 		"typescript": "^6.0.3"

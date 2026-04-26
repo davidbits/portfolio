@@ -20,8 +20,8 @@
 	"dependencies": {
 		"@astrojs/check": "^0.9.8",
 		"@astrojs/mdx": "^4.3.14",
-		"@astrojs/react": "^5.0.3",
-		"@react-pdf/renderer": "^4.4.1",
+		"@astrojs/react": "^5.0.4",
+		"@react-pdf/renderer": "^4.5.1",
 		"@tailwindcss/typography": "^0.5.19",
 		"@vercel/analytics": "^1.6.1",
 		"astro": "^5.18.1",
@@ -34,13 +34,13 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.8",
-		"@tailwindcss/vite": "^4.2.2",
+		"@tailwindcss/vite": "^4.2.4",
 		"@types/bun": "latest",
 		"@types/katex": "^0.16.8",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
 		"husky": "^9.1.7",
-		"tailwindcss": "^4.2.2",
-		"typescript": "^6.0.2"
+		"tailwindcss": "^4.2.4",
+		"typescript": "^6.0.3"
 	}
 }

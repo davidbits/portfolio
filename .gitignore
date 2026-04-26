@@ -5,6 +5,7 @@ collect_files.py
 output.txt
 entities.json
 mempalace.yaml
+.codex
 
 design_docs/
 venv/

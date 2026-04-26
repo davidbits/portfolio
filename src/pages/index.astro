@@ -12,12 +12,12 @@ import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout>
-	<div class="mx-auto max-w-4xl bg-white p-8 font-sans text-gray-800">
+	<div class="mx-auto max-w-4xl bg-white px-4 py-6 font-sans text-gray-800 sm:p-8">
 		<Header />
-		<main class="space-y-16">
+		<main class="space-y-12 sm:space-y-16">
 			<Experience />
 			<section id="projects" aria-labelledby="projects-heading">
-				<h2 id="projects-heading" class="mb-6 border-b pb-2 text-3xl font-semibold">
+				<h2 id="projects-heading" class="mb-6 border-b pb-2 text-2xl font-semibold sm:text-3xl">
 					Featured Projects
 				</h2>
 				<ProjectsGrid />

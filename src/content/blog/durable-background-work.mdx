@@ -121,50 +121,26 @@ That honesty matters. Users can navigate away and come back. Support can ask for
 
 A useful job table does not need to be clever. It needs to be boring and strict.
 
-Typical job fields:
+One compact way to sketch the model:
 
-- `id`
-- `type`
-- `status`
-- `stage`
-- `progress_current`
-- `progress_total`
-- `idempotency_key`
-- `created_by`
-- `lease_owner`
-- `lease_expires_at`
-- `attempt_count`
-- `cancel_requested_at`
-- `completed_at`
-- `failed_at`
-- `error_code`
-- `error_message`
-
-Typical item fields:
-
-- `job_id`
-- `item_id`
-- `status`
-- `source_uri`
-- `attempt_count`
-- `next_retry_at`
-- `artifact_uri`
-- `inserted_row_count`
-- `error_code`
-- `error_message`
-
-Then add append-only events:
-
-- `job_created`
-- `item_started`
-- `item_succeeded`
-- `item_failed_retryable`
-- `item_failed_terminal`
-- `job_partially_succeeded`
-- `job_succeeded`
-- `job_failed`
-- `job_cancel_requested`
-- `job_cancelled`
+| Job fields | Item fields | Append-only events |
+| --- | --- | --- |
+| `id` | `job_id` | `job_created` |
+| `type` | `item_id` | `item_started` |
+| `status` | `status` | `item_succeeded` |
+| `stage` | `source_uri` | `item_failed_retryable` |
+| `progress_current` | `attempt_count` | `item_failed_terminal` |
+| `progress_total` | `next_retry_at` | `job_partially_succeeded` |
+| `idempotency_key` | `artifact_uri` | `job_succeeded` |
+| `created_by` | `inserted_row_count` | `job_failed` |
+| `lease_owner` | `error_code` | `job_cancel_requested` |
+| `lease_expires_at` | `error_message` | `job_cancelled` |
+| `attempt_count` | | |
+| `cancel_requested_at` | | |
+| `completed_at` | | |
+| `failed_at` | | |
+| `error_code` | | |
+| `error_message` | | |
 
 Status transitions should be validated, not implied. A succeeded job should not become running again. A cancelled item should not write output. A worker with an expired lease should not keep committing state.
 

@@ -5,8 +5,6 @@ description: 'A practical pattern for moving fragile background processing out o
 tags: ['Architecture', 'Backend', 'Reliability']
 ---
 
-# Stop Hiding Critical Work in Request Threads
-
 Fast API responses are good. Fast API responses that quietly push critical work into a fragile background thread are not.
 
 This is a common trap in product engineering. A user uploads something, imports something, kicks off a sync, or triggers a recalculation. The request handler does enough work to say "accepted", then starts some detached process in memory and returns. From the user's point of view, the app feels responsive. From the system's point of view, the important work is now running without a durable contract.

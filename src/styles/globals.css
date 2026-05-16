@@ -23,11 +23,11 @@ body {
 	color: #374151;
 }
 
-.blog-post {
+.blog-article {
 	max-width: none;
 }
 
-.blog-post > :not(pre.mermaid) {
+.blog-article > :not(pre.mermaid) {
 	max-width: 48rem;
 	margin-right: auto;
 	margin-left: auto;

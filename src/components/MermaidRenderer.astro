@@ -1,0 +1,59 @@
+<script>
+	import mermaid from "mermaid";
+
+	type BlogMermaidWindow = Window & {
+		blogMermaidAbortController?: AbortController;
+		blogMermaidInitialized?: boolean;
+	};
+
+	const blogMermaidWindow = window as BlogMermaidWindow;
+	blogMermaidWindow.blogMermaidAbortController?.abort();
+
+	const abortController = new AbortController();
+	blogMermaidWindow.blogMermaidAbortController = abortController;
+
+	function initializeMermaid() {
+		if (blogMermaidWindow.blogMermaidInitialized) {
+			return;
+		}
+
+		mermaid.initialize({
+			securityLevel: "loose",
+			startOnLoad: false,
+			theme: "base",
+		});
+
+		blogMermaidWindow.blogMermaidInitialized = true;
+	}
+
+	async function renderMermaidDiagrams() {
+		initializeMermaid();
+
+		const diagrams = Array.from(document.querySelectorAll<HTMLElement>("pre.mermaid:not([data-processed])"));
+		if (diagrams.length === 0) {
+			return;
+		}
+
+		await mermaid.run({
+			nodes: diagrams,
+			suppressErrors: true,
+		});
+	}
+
+	function queueMermaidRender() {
+		if (document.readyState === "loading") {
+			document.addEventListener("DOMContentLoaded", () => void renderMermaidDiagrams(), {
+				once: true,
+				signal: abortController.signal,
+			});
+			return;
+		}
+
+		void renderMermaidDiagrams();
+	}
+
+	queueMermaidRender();
+
+	document.addEventListener("astro:page-load", () => void renderMermaidDiagrams(), { signal: abortController.signal });
+	document.addEventListener("astro:before-swap", () => abortController.abort(), { signal: abortController.signal });
+</script>

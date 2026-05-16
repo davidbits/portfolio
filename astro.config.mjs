@@ -3,14 +3,20 @@ import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
+import rehypeMermaid from "./src/lib/rehypeMermaid.mjs";
+
+const syntaxHighlight = {
+	type: "shiki",
+	excludeLangs: ["math", "mermaid"],
+};
 
 export default defineConfig({
-	integrations: [
-		mdx({
-			remarkPlugins: [remarkMath],
-			rehypePlugins: [rehypeKatex],
-		}),
-	],
+	markdown: {
+		remarkPlugins: [remarkMath],
+		rehypePlugins: [rehypeKatex, rehypeMermaid],
+		syntaxHighlight,
+	},
+	integrations: [mdx()],
 	vite: {
 		esbuild: {
 			jsx: "automatic",

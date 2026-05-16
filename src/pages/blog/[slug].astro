@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
+import MermaidRenderer from "@/components/MermaidRenderer.astro";
 import Layout from "@/layouts/Layout.astro";
 import "katex/dist/katex.min.css";
 
@@ -13,6 +14,8 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+const hasMermaidDiagrams =
+	/^[\t ]*(?:```|~~~)[\t ]*mermaid(?:[\t ].*)?$/im.test(post.body ?? "");
 ---
 
 <Layout title={`${post.data.title} | Blog`} description={post.data.description}>
@@ -43,5 +46,6 @@ const { Content } = await render(post);
 		<article class="prose prose-gray max-w-none prose-headings:font-semibold prose-a:text-blue-600 prose-pre:max-w-full prose-pre:overflow-x-auto lg:prose-lg [&_.katex-display]:overflow-x-auto [&_.katex-display]:overflow-y-hidden [&_.katex-display]:py-2">
 			<Content />
 		</article>
+		{hasMermaidDiagrams && <MermaidRenderer />}
 	</div>
 </Layout>

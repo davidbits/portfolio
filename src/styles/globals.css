@@ -23,6 +23,23 @@ body {
 	color: #374151;
 }
 
+.prose pre.mermaid {
+	overflow-x: auto;
+	border: 1px solid #e5e7eb;
+	border-radius: 0.5rem;
+	background: #f9fafb;
+	color: #111827;
+	padding: 1rem;
+	text-align: center;
+}
+
+.prose pre.mermaid svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin-inline: auto;
+}
+
 .sr-only {
 	position: absolute;
 	width: 1px;

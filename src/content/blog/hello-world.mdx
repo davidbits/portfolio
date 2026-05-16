@@ -26,6 +26,17 @@ $$
 \int_{a}^{b} f(x) \,dx
 $$
 
+## Testing Mermaid
+
+Here is a simple diagram for the blog publishing flow:
+
+```mermaid
+flowchart LR
+	Draft[Write MDX] --> Build[Astro builds the post]
+	Build --> Render[Render Markdown, LaTeX, and Mermaid]
+	Render --> Publish[Publish static page]
+```
+
 ## Testing Media
 
 I can also include images from my project structure easily:

@@ -6,10 +6,10 @@
 		"node": ">=22.12.0"
 	},
 	"scripts": {
-		"dev": "astro dev",
-		"build": "astro check && astro build",
-		"preview": "astro preview",
-		"astro": "astro",
+		"dev": "bunx --bun astro dev",
+		"build": "bunx --bun astro check && bunx --bun astro build",
+		"preview": "bunx --bun astro preview",
+		"astro": "bunx --bun astro",
 		"fixup": "bun format && bun lint",
 		"format": "bunx --bun @biomejs/biome format --write .",
 		"lint": "bunx --bun @biomejs/biome lint --write .",

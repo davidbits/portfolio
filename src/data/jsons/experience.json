@@ -1,14 +1,34 @@
 [
 	{
+		"company": "Yoco",
+		"role": "Full Stack Engineer",
+		"period": "May 2026 - Present",
+		"link": "https://www.yoco.com",
+		"description": "Working across product and platform engineering in Cape Town.",
+		"details": [
+			"Building and scaling production systems across modern web, cloud, data, and backend infrastructure.",
+			"Developing full-stack product features backed by distributed services and system architecture.",
+			"Working across product-facing interfaces and platform foundations for reliable production delivery."
+		],
+		"tech": [
+			"React",
+			"Next.js",
+			"TypeScript",
+			"Cloud Infrastructure",
+			"Distributed Services",
+			"Data Workflows"
+		]
+	},
+	{
 		"company": "astraen",
 		"role": "Developer & Founder",
 		"period": "Oct 2025 - Present",
 		"link": "https://astraen.dev",
-		"description": " I started my own business for personal projects and freelance work.",
+		"description": "Building independent software projects and technical foundations for product ideas.",
 		"details": [
-			"Specializing in transforming raw ideas into actionable technical blueprints.",
-			"Architecting robust, scalable, and maintainable foundations for modern applications.",
-			"Executing full-cycle development from concept and strategy to deployment and quality assurance."
+			"Translating early ideas into practical technical blueprints and working prototypes.",
+			"Architecting maintainable foundations for modern web, mobile, and desktop applications.",
+			"Delivering full-cycle development from product strategy through deployment and quality assurance."
 		],
 		"tech": [
 			"Next.js",
@@ -24,13 +44,13 @@
 	},
 	{
 		"company": "The DataFlow",
-		"role": "Co-founder & Founding Engineer",
+		"role": "Founding Engineer",
 		"period": "Nov 2024 - Jul 2025",
-		"description": "Led engineering for a mobile app empowering users to monitor and control mobile data usage.",
+		"description": "Co-founded and led engineering for a mobile app that helped users monitor and control mobile data usage.",
 		"details": [
-			"Built the full stack from the ground up in Flutter/Dart and Kotlin.",
+			"Built the full stack from the ground up using Flutter/Dart, Kotlin, and Firebase.",
 			"Implemented a custom on-device firewall using Android VpnService.",
-			"Established the app's architecture, local database design (Drift/SQLite), and CI/CD workflows.",
+			"Established the app architecture, development workflow, local database design, and CI/CD pipeline.",
 			"Integrated Firebase for authentication, analytics, and crash reporting."
 		],
 		"tech": ["Flutter", "Kotlin", "Firebase", "SQLite", "Riverpod"]
@@ -40,40 +60,27 @@
 		"role": "Software Engineering Intern",
 		"period": "November 2023 - January 2024",
 		"link": "https://arixian.ai",
-		"description": "Developed microservices for secure optic-data streaming for an AI-driven security startup.",
+		"description": "Developed a microservice for securely streaming CCTV video data to the cloud.",
 		"details": [
-			"Built microservices using Python.",
-			"Hardened secure communication protocols against intrusion.",
-			"Containerized applications using Docker.",
-			"Collaborated with the team to enhance system security and performance."
+			"Built secure video streaming services using Python.",
+			"Protected camera-to-cloud data paths with encrypted communication.",
+			"Containerized services using Docker.",
+			"Collaborated with the team to improve system security and performance."
 		],
 		"tech": ["Python", "Docker", "GitLab", "CI/CD"]
 	},
 	{
 		"company": "Oobalink",
-		"role": "iOS App Developer (Contract)",
-		"period": "October 2020 - Match 2021",
+		"role": "App Developer",
+		"period": "October 2020 - March 2021",
 		"link": "https://ooba.co.za",
-		"description": "Built a fully interactive iOS prototype for streamlining client data acquisition for a major loan originator.",
+		"description": "Developed an interactive iOS app prototype for streamlining home loan application data capture.",
 		"details": [
 			"Designed and implemented the UI with SwiftUI.",
-			"Built interactive data-entry forms and managed local state.",
+			"Built interactive workflows and data-entry forms that simulated the final production experience.",
 			"Implemented on-device data storage solutions.",
 			"Created a proof-of-concept used for stakeholder demonstration."
 		],
 		"tech": ["Swift", "SwiftUI", "Xcode", "GitHub"]
-	},
-	{
-		"company": "Funky Chickens",
-		"role": "Business Operations Manager",
-		"period": "2016 - 2019",
-		"description": "Managed sales, marketing, and operations for an organic food retailer.",
-		"details": [
-			"Managed invoicing and financial tracking.",
-			"Oversaw stock management and logistics.",
-			"Tracked sales performance and set targets.",
-			"Handled client relations and business development."
-		],
-		"tech": ["Excel", "Yoco", "Logistics"]
 	}
 ]

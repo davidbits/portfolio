@@ -125,9 +125,6 @@ const ResumeDocument = () => (
 				<Text style={styles.name}>{ABOUT.name}</Text>
 				<Text style={styles.role}>{ABOUT.role}</Text>
 				<View style={styles.contactRow}>
-					<Link src={`mailto:${CONTACT.email}`} style={styles.link}>
-						{CONTACT.email}
-					</Link>
 					<Link src={`https://${CONTACT.github}`} style={styles.link}>
 						GitHub
 					</Link>

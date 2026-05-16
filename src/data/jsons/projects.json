@@ -12,7 +12,7 @@
 			"Web Workers",
 			"KaTeX"
 		],
-		"github": "https://github.com/astraen-dev/sortpedia",
+		"github": "https://github.com/davidbits/sortpedia",
 		"link": "https://sortpedia.com",
 		"overview": "SortPedia is a modern, interactive encyclopedia that bridges the gap between abstract computer science theory and intuitive visual understanding. It allows users to watch, race, and benchmark over 30 sorting algorithms—from industry standards like Quick Sort to esoteric ones like Thanos Sort—directly in the browser, providing a comprehensive educational tool for students and developers.",
 		"objectives": [

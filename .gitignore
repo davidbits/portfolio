@@ -103,3 +103,5 @@ next-env.d.ts
 # Gradle
 .idea/**/gradle.xml
 .idea/**/libraries
+# Added by code-review-graph
+.code-review-graph/

@@ -33,6 +33,24 @@ body {
 	margin-left: auto;
 }
 
+.prose :not(pre) > code {
+	display: inline;
+	border: 1px solid #e5e7eb;
+	border-radius: 0.375rem;
+	background: #f3f4f6;
+	color: #111827;
+	padding: 0.125rem 0.35rem;
+	font-size: 0.875em;
+	font-weight: 500;
+	white-space: normal;
+	overflow-wrap: anywhere;
+}
+
+.prose :not(pre) > code::before,
+.prose :not(pre) > code::after {
+	content: none;
+}
+
 .prose pre.mermaid {
 	width: 100%;
 	max-width: 100%;

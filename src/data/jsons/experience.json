@@ -4,17 +4,21 @@
 		"role": "Full Stack Engineer",
 		"period": "May 2026 - Present",
 		"link": "https://www.yoco.com",
-		"description": "Working across product and platform engineering in Cape Town.",
+		"description": "Building Dyner at Yoco: an AI-native operating system for restaurants and independent businesses.",
 		"details": [
-			"Building and scaling production systems across modern web, cloud, data, and backend infrastructure.",
-			"Developing full-stack product features backed by distributed services and system architecture.",
-			"Working across product-facing interfaces and platform foundations for reliable production delivery."
+			"Build across frontend, backend, cloud infrastructure, and data workflows.",
+			"Develop systems for restaurant operations: inventory, suppliers, reporting, and margins.",
+			"Contribute to AI-native tools for independent businesses across product and platform layers.",
+			"Work in a small engineering team taking Dyner forward inside Yoco."
 		],
 		"tech": [
 			"React",
 			"Next.js",
 			"TypeScript",
-			"Cloud Infrastructure",
+			"Python",
+			"Google Cloud Platform",
+			"Terraform",
+			"Docker",
 			"Distributed Services",
 			"Data Workflows"
 		]

@@ -1,5 +1,5 @@
 {
-	"languages": ["C++", "Python", "Rust", "Go", "TypeScript", "Dart"],
+	"languages": ["C++", "Python", "TypeScript", "Rust", "Go", "Dart"],
 	"frameworks": [
 		"React",
 		"Next.js",
@@ -7,21 +7,32 @@
 		"Tauri",
 		"SvelteKit",
 		"FastAPI",
-		"Tailwind CSS"
+		"Tailwind CSS",
+		"Riverpod"
 	],
-	"cloud": ["Firebase", "Google Cloud Platform (GCP)"],
-	"tools": [
+	"cloud": [
+		"Google Cloud Platform",
+		"Firebase",
+		"Terraform",
 		"Docker",
-		"Git/GitHub",
+		"CI/CD"
+	],
+	"tools": [
+		"Git",
+		"GitHub",
+		"GitLab",
 		"Linux",
 		"Vercel",
-		"CI/CD",
-		"JetBrains IDEs"
+		"SQLite",
+		"JetBrains IDEs",
+		"Xcode"
 	],
 	"soft": [
-		"Problem Solving",
 		"System Design",
+		"Product Engineering",
+		"Problem Solving",
+		"Technical Writing",
 		"Project Management",
-		"Technical Writing"
+		"Customer-Centric Engineering"
 	]
 }
